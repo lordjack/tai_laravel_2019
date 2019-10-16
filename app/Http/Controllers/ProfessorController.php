@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-class ProfessorController extends Controller
-{
-    public function listar()
-    {
+use Illuminate\Http\Request;
+
+class ProfessorController extends Controller {
+
+    public function listar() {
         return view('professores');
     }
 }

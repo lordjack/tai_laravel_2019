@@ -7,7 +7,7 @@ Route::get('/', function () {
 Route::get('/alunos', 'AlunoController@listar');
 Route::get('/alunos/cadastrar', 'AlunoController@cadastrar');
 Route::get('/alunos/editar/{id}', 'AlunoController@editar');
-Route::get('/alunos/confirmar/{id}', 'AlunoController@confirmar');
+Route::get('/alunos/remover/{id}', 'AlunoController@remover');
 Route::post('/alunos/salvar/{id}', 'AlunoController@salvar');
 
 Route::get('/professores', 'ProfessorController@listar');

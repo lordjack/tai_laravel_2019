@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-        <h1>Conceitos Iniciais / Rotas / Views / Blades</h1>
+    <head>
+        <title>Aula05 - Laravel</title>
+    </head>
+    <body>
+        <h1>BD / Migration / Seeder / Model / Controller</h1>
         <div>
             @yield('cabecalho')
         </div>
@@ -15,5 +12,9 @@
         <div>
             @yield('conteudo')
         </div>
-</body>
+
+        <div>
+            <b>&copy;2019 &raquo; TAI</b>
+        </div>
+    </body>
 </html>
