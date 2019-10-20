@@ -38,8 +38,8 @@ Para que possa gerar uma Key, escreva este comando no terminal / cmd
 
 
 ### Composer - Gerenciador de Pacotes
-**instalar os pacotes**  
-`composer install do laravel`
+**instalar os pacotes(bibliotecas) do Laravel**  
+`composer install`
 
 **atualizar os pacotes do laravel**  
 `composer update`
