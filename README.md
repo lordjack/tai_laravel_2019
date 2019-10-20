@@ -14,35 +14,35 @@ Projeto desenvolvido durante as aulas de tópicos avançados em informática no 
 ## Comandos Básicos Úteis
 Para que possa gerar uma Key, escreva este comando no terminal / cmd
 
-Listar os comandos  
-php artisan list
+**Listar os comandos**  
+`php artisan list`
 
 **Gerar uma chave de desenvolvimento para o laravel**  
-*php artisan key:generate*
+`php artisan key:generate`
 
 **Criar um arquivo de migração referenciando uma tabela**  
-*php artisan make:migration create_table_nome_tabela --create=nome_tabela*
+`php artisan make:migration create_table_nome_tabela --create=nome_tabela`
 
 **Criar um Model e o -m já cria um arquivo de migração**  
-*php artisan make:model NomeModel -m*
+`php artisan make:model NomeModel -m`
 
 **Executa a insersão dos registros no banco de dados**  
-*php artisan db:seed*
+`php artisan db:seed`
 
 **Iniciar o servidor**  
 `php artisan serve`
 
-**Realizer a migração criando as tabelas do banco de dados  **
+**Realizer a migração criando as tabelas do banco de dados**  
 `php artisan migrate`
 
 
 
 ### Composer - Gerenciador de Pacotes
-instalar os pacotes
-composer install do laravel
+**instalar os pacotes**
+`composer install do laravel`
 
-atualizar os pacotes do laravel
-composer update
+**atualizar os pacotes do laravel**
+`composer update`
 
 
 ## License
