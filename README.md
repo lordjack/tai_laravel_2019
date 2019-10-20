@@ -12,7 +12,7 @@ Projeto desenvolvido durante as aulas de tópicos avançados em informática no 
 
 
 ## Comandos Básicos Úteis
-Esses comandos devem ser usados no terminal / cmd, do projeto
+Esses comandos devem ser usados no terminal / cmd do projeto
 
 **Listar os comandos**  
 `php artisan list`
