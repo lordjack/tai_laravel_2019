@@ -12,12 +12,12 @@ Projeto desenvolvido durante as aulas de tópicos avançados em informática no 
 
 
 ## Comandos Básicos Úteis
-Para que possa gerar uma Key, escreva este comando no terminal / cmd
+Esses comandos devem ser usados no terminal / cmd, do projeto
 
 **Listar os comandos**  
 `php artisan list`
 
-**Gerar uma chave de desenvolvimento para o laravel**  
+**Gerar uma chave de desenvolvimento para o projeto Laravel**  
 `php artisan key:generate`
 
 **Criar um arquivo de migração referenciando uma tabela**  
