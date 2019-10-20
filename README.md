@@ -17,23 +17,23 @@ Para que possa gerar uma Key, escreva este comando no terminal / cmd
 Listar os comandos  
 php artisan list
 
-Gerar uma chave de desenvolvimento para o laravel  
-php artisan key:generate
+**Gerar uma chave de desenvolvimento para o laravel**  
+*php artisan key:generate*
 
-Criar um arquivo de migração referenciando uma tabela  
-php artisan make:migration create_table_alunos --create=alunos
+**Criar um arquivo de migração referenciando uma tabela**  
+*php artisan make:migration create_table_nome_tabela --create=nome_tabela*
 
-Criar um Model e o -m já cria um arquivo de migração  
-php artisan make:model NomeModel -m
+**Criar um Model e o -m já cria um arquivo de migração**  
+*php artisan make:model NomeModel -m*
 
-Executa a insersão dos registros no banco de dados  
-php artisan db:seed
+**Executa a insersão dos registros no banco de dados**  
+*php artisan db:seed*
 
-Iniciar o servidor  
-php artisan serve
+**Iniciar o servidor**  
+`php artisan serve`
 
-Realizer a migração criando as tabelas do banco de dados  
-php artisan migrate
+**Realizer a migração criando as tabelas do banco de dados  **
+`php artisan migrate`
 
 
 
