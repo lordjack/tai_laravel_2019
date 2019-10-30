@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\AlunoModel;
-use Illuminate\Http\Request;
+use Request;
 
 class AlunoController extends Controller
 {
     public function listar()
     {
         $alunos = AlunoModel::orderBy('nome')->get();
+//        dd($alunos);
         return view('alunos')->with('alunos', $alunos);
     }
 
@@ -18,23 +19,16 @@ class AlunoController extends Controller
         return view('alunoCadastrar');
     }
 
-    public function salvar(Request $request,$id)
+    public function salvar($id)
     {
         // INSERT
         if ($id == 0) {
             $objAlunoModel = new AlunoModel();
-            $objAlunoModel->nome = $request->input('nome');
-            $objAlunoModel->curso = $request->input('curso');
-            $objAlunoModel->turma = $request->input('turma');
-            $objAlunoModel->save();
-        } else {
-            $objAlunoModel = AlunoModel::find($id);
-            $objAlunoModel->nome = $request->input('nome');
-            $objAlunoModel->curso = $request->input('curso');
-            $objAlunoModel->turma = $request->input('turma');
+            $objAlunoModel->nome = Request::input('nome');
+            $objAlunoModel->curso = Request::input('curso');
+            $objAlunoModel->turma = Request::input('turma');
             $objAlunoModel->save();
         }
-
         return redirect()->action('AlunoController@listar');
     }
 
