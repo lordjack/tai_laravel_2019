@@ -11,3 +11,6 @@ Route::get('/', function () {
 Route::get('/alunos', 'AlunoController@listar');
 Route::get('/alunos/cadastrar', 'AlunoController@cadastrar');
 Route::post('/alunos/salvar/{id}', 'AlunoController@salvar');
+Route::get('/alunos/editar/{id}','AlunoController@editar');
+Route::get('/alunos/deletar/{id}','AlunoController@deletar');
+Route::post('/alunos/buscar/','AlunoController@buscar');
