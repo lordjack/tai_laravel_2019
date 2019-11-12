@@ -22,12 +22,17 @@
         </tr>
         </thead>
         <tbody>
-        @foreach ($alunos as $dados)
+        @foreach ($alunos as $dado)
             <tr>
-                <td>{{ $dados->id }}</td>
-                <td>{{ $dados->nome }}</td>
-                <td>{{ $dados->curso }}</td>
+                <td>{{ $dado->id }}</td>
+                <td>{{ $dado->nome }}</td>
+                <td>{{ $dado->curso }}</td>
+                <td> 
+                    <a href="{{ action('AlunoController@editar',$dado->id)}}">Editar</a>
+                    <a href="{{ action('AlunoController@deletar',$dado->id)}}">Deletar</a>
+                </td>
 
+            </tr>
         @endforeach
         </tbody>
     </table>
