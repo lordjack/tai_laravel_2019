@@ -17,7 +17,10 @@ class AlunoController extends Controller
 
     public function cadastrar()
     {
-        return view('alunoCadastrar');
+        $turmas = TurmaModel::orderBy('nome')->get();
+        //dd($turmas);
+
+        return view('alunoCadastrar')->with('turmas', $turmas);
     }
 
     public function editar($id)
@@ -35,6 +38,7 @@ class AlunoController extends Controller
             $objAlunoModel->nome = $request->input('nome');
             $objAlunoModel->curso = $request->input('curso');
             $objAlunoModel->turma = $request->input('turma');
+            $objAlunoModel->turma_id = $request->input('turma_id');
             $objAlunoModel->save();
         } else {
             // UPDATE
@@ -42,6 +46,7 @@ class AlunoController extends Controller
             $objAlunoModel->nome = $request->input('nome');
             $objAlunoModel->curso = $request->input('curso');
             $objAlunoModel->turma = $request->input('turma');
+            $objAlunoModel->turma_id = $request->input('turma_id');
             $objAlunoModel->save();
         }
         return redirect()->action('AlunoController@listar');
