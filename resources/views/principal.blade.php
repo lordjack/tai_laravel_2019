@@ -8,7 +8,6 @@
         <div>
             @yield('cabecalho')
         </div>
-
         <div>
             @yield('conteudo')
         </div>

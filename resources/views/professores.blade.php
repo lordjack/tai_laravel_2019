@@ -1,6 +1,7 @@
 @extends('principal')
 
 <a href="{{ url('/') }}">Home</a>
+
 @section('cabecalho')
     <h2>Professores Cadastrados</h2>
 @stop
