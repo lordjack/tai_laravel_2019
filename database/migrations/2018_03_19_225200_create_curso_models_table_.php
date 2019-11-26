@@ -13,7 +13,11 @@ class CreateCursoModelsTable extends Migration
      */
     public function up()
     {
+<<<<<<< HEAD
         Schema::create('curso_models', function (Blueprint $table) {
+=======
+        Schema::create('cursos', function (Blueprint $table) {
+>>>>>>> origin/master
             $table->increments('id');
             $table->string('nome');
             $table->string('abreviatura');
@@ -27,6 +31,10 @@ class CreateCursoModelsTable extends Migration
      */
     public function down()
     {
+<<<<<<< HEAD
         Schema::dropIfExists('curso_models');
+=======
+        Schema::dropIfExists('cursos');
+>>>>>>> origin/master
     }
 }

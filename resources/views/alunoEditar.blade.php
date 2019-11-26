@@ -3,16 +3,16 @@
 <a href="{{ url('/') }}">Home</a>
 @section('cabecalho')
     <a href="/alunos">
-        <img src=" {{ url('/img/alunop_ico.png') }}">
+        <img src=" {{ url('/img/alunop_ico.png') }}" >
     </a>
-    &nbsp;Editar Aluno
+    &nbsp;Cadastrar Novo Aluno
     </div>
 @stop
 
 @section('conteudo')
 
     <form action="{{ action('AlunoController@salvar', $aluno->id) }}" method="POST">
-        <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
+        <input type ="hidden" name="_token" value="{{{ csrf_token() }}}">
 
         <label>Nome: </label>
         <input type="text" name="nome" value="{{$aluno->nome}}" class="form-control">
@@ -23,6 +23,7 @@
         <label>Turma: </label>
         <input type="text" name="turma" value="{{$aluno->turma}}" class="form-control">
         <br>
-        <button type="submit" class="btn btn-success btn-block">Salvar</button>
+        <button type="submit" >Salvar</button>
     </form>
 @stop
+

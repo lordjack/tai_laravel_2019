@@ -22,8 +22,15 @@
         <br>
         <label>Turma: </label>
         <input type="text" name="turma" class="form-control">
+
+        <label>Turma ID: </label>
+        <select name="turma_id">
+            @foreach ($turmas as $item)
+                <option value="{{$item->id}}"> {{$item->nome}} </option>
+            @endforeach
+        </select>
         <br>
-        <button type="submit" class="btn btn-success btn-block">Salvar</button>
+        <button type="submit" >Salvar</button>
     </form>
 @stop
 
