@@ -26,6 +26,9 @@ Esses comandos devem ser usados no terminal / cmd do projeto
 **Criar um Model e o -m já cria um arquivo de migração**  
 `php artisan make:model NomeModel -m`
 
+**Criar um Controller e o --model associa com o Model da tabela**  
+`php artisan make:controller NomeTabelaController --resource --model=NomeTabelaModel`
+
 **Executa a insersão dos registros no banco de dados**  
 `php artisan db:seed`
 
