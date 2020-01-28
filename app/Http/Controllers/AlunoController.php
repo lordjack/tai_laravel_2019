@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AlunoModel;
+use App\TurmaModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class AlunoController extends Controller
     {
         $alunos = AlunoModel::orderBy('nome')->get();
         //        dd($alunos);
-        return view('alunos')->with('alunos', $alunos);
+        return view('aluno.listar')->with('alunos', $alunos);
     }
 
     public function cadastrar()
@@ -20,14 +21,14 @@ class AlunoController extends Controller
         $turmas = TurmaModel::orderBy('nome')->get();
         //dd($turmas);
 
-        return view('alunoCadastrar')->with('turmas', $turmas);
+        return view('aluno.alunoCadastrar')->with('turmas', $turmas);
     }
 
     public function editar($id)
     {
         $aluno = AlunoModel::find($id);
 
-        return view('alunoEditar')->with('aluno', $aluno);
+        return view('aluno.alunoEditar')->with('aluno', $aluno);
     }
 
     public function salvar(Request $request, $id)
@@ -37,7 +38,6 @@ class AlunoController extends Controller
             $objAlunoModel = new AlunoModel();
             $objAlunoModel->nome = $request->input('nome');
             $objAlunoModel->curso = $request->input('curso');
-            $objAlunoModel->turma = $request->input('turma');
             $objAlunoModel->turma_id = $request->input('turma_id');
             $objAlunoModel->save();
         } else {
@@ -45,7 +45,6 @@ class AlunoController extends Controller
             $objAlunoModel = AlunoModel::find($id);
             $objAlunoModel->nome = $request->input('nome');
             $objAlunoModel->curso = $request->input('curso');
-            $objAlunoModel->turma = $request->input('turma');
             $objAlunoModel->turma_id = $request->input('turma_id');
             $objAlunoModel->save();
         }
@@ -67,14 +66,10 @@ class AlunoController extends Controller
     {
         $nome = $request->input('nome');
 
-        $query = DB::table('alunos');
+        $alunos = AlunoModel::query()
+            ->where('nome', 'like', '%' . $nome . '%')
+            ->get();
 
-        if (!empty($nome)) {
-            $query->where('nome', 'like', '%' . $nome . '%');
-        }
-
-        $alunos = $query->orderBy('nome')->paginate(20);
-
-        return view('alunos')->with('alunos', $alunos);
+        return view('aluno.listar')->with('alunos', $alunos);
     }
 }

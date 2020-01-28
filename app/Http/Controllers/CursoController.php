@@ -10,14 +10,20 @@ class CursoController extends Controller
 
     public function listar()
     {
-
         $cursos = CursoModel::orderBy('nome')->get();
-        return view('cursos')->with('cursos', $cursos);
+        return view('curso.listar')->with('cursos', $cursos);
+    }
+
+    public function listarApi()
+    {
+        $cursos = CursoModel::orderBy('nome')->get();
+
+        return response()->json(['curso' => $cursos])->header('Content-Type', 'application/json');
     }
 
     public function cadastrar()
     {
-        return view('cursoCadastrar');
+        return view('curso.cursoCadastrar');
     }
 
     public function salvar($id)
@@ -47,12 +53,11 @@ class CursoController extends Controller
         if (empty($curso)) {
             return "<h2>[ERRO]: Curso não encontrado para o ID=" . $id . "!</h2>";
         }
-        return view('cursoEditar')->with('curso', $curso);
+        return view('curso.cursoEditar')->with('curso', $curso);
     }
 
-    public function remover($id)
+    public function deletar($id)
     {
-
         $objCursoModel = CursoModel::find($id);
         // Verifica se existe um curso com o 'id' recebido por parâmetro
         if (empty($objCursoModel)) {

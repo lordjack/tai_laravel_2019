@@ -15,68 +15,68 @@ class AlunosController extends Controller
 
     public function index(Request $request){
         try {
-            $data =  $this->alunosRepository->index($request);
-            return response()->json($data, 200);
+            $dataObject =  $this->alunosRepository->index($request);
+            return response()->json($dataObject, 200);
         } catch(\Exception $e){
-            $data = [
+            $dataObject = [
                 "message"=> "Error, try again!",
                 "text"=>    $e->getMessage()
             ];
-            return response()->json($data, 401);
+            return response()->json($dataObject, 401);
         }
     }
 
     public function show($id){
         try {
-            $data = $this->alunosRepository->show($id);
-            return response()->json($data, 200);
+            $dataObject = $this->alunosRepository->show($id);
+            return response()->json($dataObject, 200);
         } catch(\Exception $e){
-            $data = [
+            $dataObject = [
                 "message"=> "Error, try again!",
                 "text"=>    $e->getMessage()
             ];
-            return response()->json($data, 400);
+            return response()->json($dataObject, 400);
         }
     }
 
     public function store(Request $request){
         try {
-            $data = $this->alunosRepository->store($request);
-            return response()->json($data, 200);
+            $dataObject = $this->alunosRepository->store($request);
+            return response()->json($dataObject, 200);
         } catch(\Exception $e){
-            $data = [
+            $dataObject = [
                 "message"=> "Error, try again!",
                 "code" => $e->getCode(),
                 "text "=>    $e->getMessage()
             ];
-            return response()->json($data, 400);
+            return response()->json($dataObject, 400);
         }
     }
 
     public function update(Request $request, $id){
         try {
-            $data = $this->alunosRepository->update($request, $id);
-            return response()->json($data, 200);
+            $dataObject = $this->alunosRepository->update($request, $id);
+            return response()->json($dataObject, 200);
         } catch(\Exception $e){
-            $data = [
+            $dataObject = [
                 "message" => "Error, try again!",
                  "code" => $e->getCode(),
                 "text" =>    $e->getMessage()
             ];
-            return response()->json($data, 400);
+            return response()->json($dataObject, 400);
         }
     }
 
     public function destroy($id){
         try {
-            $data = $this->alunosRepository->destroy($id);
-            return response()->json($data, 200);
+            $dataObject = $this->alunosRepository->destroy($id);
+            return response()->json($dataObject, 200);
         } catch(\Exception $e){
-            $data = [
+            $dataObject = [
                 "message"=> "Error, try again!",
                 "text"=>    $e->getMessage()
             ];
-            return response()->json($data, 400);
+            return response()->json($dataObject, 400);
         }
     }
 

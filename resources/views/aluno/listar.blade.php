@@ -35,9 +35,9 @@
             <tr>
                 <td>{{ $dado->id }}</td>
                 <td>{{ $dado->nome }}</td>
-                <td>{{ $dado->turma}}</td>
+                <td>{{ $dado->turmas->nome}}</td>
                 <td>{{ $dado->curso }}</td>
-                <td> 
+                <td>
                     <a href="{{ action('AlunoController@editar',$dado->id)}}">Editar</a>
                     <a href="{{ action('AlunoController@deletar',$dado->id)}}">Deletar</a>
                 </td>

@@ -30,7 +30,7 @@
             <td>
                 <a href="{{ action('CursoController@editar', $dados->id) }}">Editar</span></a>
                 &nbsp;
-                <a href="{{ action('CursoController@remover', $dados->id) }}">Remover</span></a>
+                <a href="{{ action('CursoController@deletar', $dados->id) }}">Remover</span></a>
             </td>
 
             @endforeach
