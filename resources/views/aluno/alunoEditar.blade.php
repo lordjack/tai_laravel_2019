@@ -24,7 +24,11 @@
     <label>Turma ID: </label>
     <select name="turma_id">
         @foreach ($turmas as $item)
-        <option value="{{$item->id}}"> {{$item->nome}} </option>
+        <option value="{{ $item->id }}"
+        @if ($item->id == old('turma_id', $aluno->turma_id))
+            selected="selected"
+        @endif
+        >{{$item->nome}}</option>
         @endforeach
     </select>
     <br>
